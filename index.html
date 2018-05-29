@@ -1,15 +1,415 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Hello World!</h1>
-        <button id="btn">Click me</button>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Pacifico" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <title>GTC</title>
+  </head>
+  <body class="grey lighten-2">
+      <!-- Side Navigation -->
+    <div class="container-fluid" id="sideNavigation">
+          <a href="" data-activates="main-menu" class="button-collapse light-blue-text darken-4-text"><i class="material-icons">menu</i></a>
+          <ul id="main-menu" class="side-nav grey lighten-2">
+            <li> <h4 class="center">Menu</h4> </li>
+            <li class="divider"></li>
+            <li class="divider"></li>
+            <li>
+              <a class="waves-effect" href="index.html"><i class="material-icons">home</i>Home</a>
+            </li>
+            <li>
+              <a class="waves-effect" href="#mapAndOptions"><i class="material-icons">map</i>Map Visualization</a>
+            </li>
+            <li>
+              <a class="waves-effect" href="#tableDataSearch"><i class="material-icons">chrome_reader_mode</i>Neighborhood By Borough</a>
+            </li>
+          </ul>
     </div>
-    <script src="index.js"></script>
-</body>
+    <!--Title-->
+    <div class="row">
+      <div class="col s2 offset-s4 pull-s2">
+        <h2 id="mainTitle" class="blue-grey-text center">GETCO</h2>
+        <p id="mainSubTitle" class="flow-text center">"Get Rest, Get Comfortable"</p>
+      </div>
+    </div>
+    <!-- Title End -->
+    <div class="blue-grey-text center"> <h4 class="flow-text">Info About The Page</h4> </div>
+    <div class="progress">
+        <div class="determinate" style="width:100%"></div>
+    </div>
+    <div class="container">
+      <!--Option Cards-->
+      <div class="row">
+        <div class="col m6 l6 xl6 center">
+          <div class="card blue-grey">
+            <div class="card-image">
+              <img src="https://images.pexels.com/photos/697662/pexels-photo-697662.jpeg">
+              <span class="card-title grey lighten-2 light-blue-text darken-4-text">Go To Map</span>
+            </div>
+            <div class="card-content">
+              <p>Display Info Through a Map or Export the Data.</p>
+            </div>
+            <div class="card-action">
+              <a href="#mapAndOptions" class="green-text darken-1-text">Go Now!</a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12  m6 l6 xl6 center">
+          <div class="card blue-grey">
+            <div class="card-image">
+              <img src="https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg">
+              <span class="card-title grey lighten-2 light-blue-text darken-4-text">Go To Charts</span>
+            </div>
+            <div class="card-content">
+              <p>Display The Data You Need Through Different Charts.</p>
+            </div>
+            <div class="card-action">
+              <a href="#tableDataSearch" class="green-text darken-1-text">Go Now!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+   </div>
+   <!-- End of option cards -->
+   <div class="blue-grey-text center" id="mapAndOptions"> <h4 class="flow-text">Map And Options</h4> </div>
+   <div class="progress">
+       <div class="determinate" style="width:100%"></div>
+   </div>
+   <!-- Start of Map and Options -->
+   <div class="container-fluid">
+     <div class="row">
+       <div class="col s4">
+         <div class="card blue-grey">
+           <div class="card-content white-text">
+             <span class="card-title">Distance</span>
+             <p>View the best places according to distance from the NYU Stern School of Business.</p>
+           </div>
+           <div class="card-action center">
+             <button class="btn green darken-1 z-depth-1 flow-text" id="displayDistanceButton">Display Distance</button>
+             <button class="btn green darken-1 z-depth-1 flow-text" id="tableDistanceButton">Export 10 Best Distance Districts</button>
+           </div>
+           <div class="card-content white-text">
+             <span class="card-title">Criminal Level</span>
+             <p>View the best places according to the criminal level.</p>
+           </div>
+           <div class="card-action center">
+             <a href="" class="dropdown-button green darken-1 btn flow-text" data-activates="dropdown1">Display Criminal Level</a>
+             <!-- Dropdown Structure -->
+             <ul id='dropdown1' class='dropdown-content blue-grey'>
+               <li><a href="#!" id="displayCriminalButtonA">Accurate (Bit of Time!)</a></li>
+               <li><a href="#!" id="displayCriminalButtonVA">Very Accurate  (Little More Time!)</a></li>
+               <li><a href="#!" id="displayCriminalButtonEA">Extreme Accurate!! (Takes Time!)</a></li>
+             </ul>
+             <button class="btn green darken-1 z-depth-1 flow-text" id="tableCriminalButton">Export 10 Best Criminal Level Districts</button>
+           </div>
+           <div class="card-content white-text">
+             <span class="card-title">Affordable Housing</span>
+             <p>View the best places according to affordable housing.</p>
+           </div>
+           <div class="card-action center">
+             <button class="btn green darken-1 z-depth-1 flow-text" id="displayAffordableButton">Display Affordable Housing (Takes Time! 20s)</button>
+             <button class="btn green darken-1 z-depth-1 flow-text" id="tableAffordableButton">Export 10 Best Affordable Housing Districts</button>
+           </div>
+           <div class="card-content white-text">
+             <span class="card-title">Districts</span>
+             <p>View the different districts in New York.</p>
+           </div>
+           <div class="card-action center">
+             <button class="btn green darken-1 z-depth-1 flow-text" id="displayDistrictButton">Display Districts</button>
+             <button class="btn green darken-1 z-depth-1 flow-text" id="tableDistrictButton">Export Best 3 General Districts</button>
+           </div>
+           <div class="card-action center">
+             <button class="btn light-blue darken-4 z-depth-1 flow-text" id="resetMap">Reset Map</button>
+           </div>
+         </div>
+       </div>
+       <div class="col s8" id="googleMapDisplay"></div>
+     </div>
+   </div>
+   <!-- End of Map and Options -->
+   <!-- Start of best districts tables -->
+   <div class="container-fluid">
+     <div class="row">
+       <div class="col">
+         <h3 class="center flow-text">Distance Table</h3>
+         <table class="responsive-table centered" id="distanceTable">
+           <thead>
+             <th>Position</th>
+             <th>District</th>
+             <th>Distance</th>
+           </thead>
+           <tbody id="tableDistanceContent">
+             <tr>
+               <td>1</td>
+               <td>102</td>
+               <td>0.51 Km</td>
+             </tr>
+             <tr>
+               <td>2</td>
+               <td>105</td>
+               <td>2.70 Km</td>
+             </tr>
+             <tr>
+               <td>3</td>
+               <td>109</td>
+               <td>10.47 Km</td>
+             </tr>
+             <tr>
+               <td>4</td>
+               <td>317</td>
+               <td>10.49 Km</td>
+             </tr>
+             <tr>
+               <td>5</td>
+               <td>404</td>
+               <td>	10.66 Km</td>
+             </tr>
+             <tr>
+               <td>6</td>
+               <td>312</td>
+               <td>11.22 Km</td>
+             </tr>
+             <tr>
+               <td>7</td>
+               <td>310</td>
+               <td>11.90 Km</td>
+             </tr>
+             <tr>
+               <td>8</td>
+               <td>305</td>
+               <td>12.00 Km</td>
+             </tr>
+             <tr>
+               <td>9</td>
+               <td>406</td>
+               <td>12.35 Km</td>
+             </tr>
+             <tr>
+               <td>10</td>
+               <td>408</td>
+               <td>16.93 Km</td>
+             </tr>
+           </tbody>
+         </table>
+         <h3 class="center flow-text">Crime Table</h3>
+         <table class="responsive-table centered" id="crimeTable">
+           <thead>
+             <th>Position</th>
+             <th>District</th>
+             <th># Crimes</th>
+           </thead>
+           <tr>
+             <td>1</td>
+             <td>482</td>
+             <td>0</td>
+           </tr>
+           <tr>
+             <td>2</td>
+             <td>227</td>
+             <td>0</td>
+           </tr>
+           <tr>
+             <td>3</td>
+             <td>481</td>
+             <td>0</td>
+           </tr>
+           <tr>
+             <td>4</td>
+             <td>480</td>
+             <td>0</td>
+           </tr>
+           <tr>
+             <td>5</td>
+             <td>226</td>
+             <td>0</td>
+           </tr>
+           <tr>
+             <td>6</td>
+             <td>408</td>
+             <td>6</td>
+           </tr>
+           <tr>
+             <td>7</td>
+             <td>411</td>
+             <td>7</td>
+           </tr>
+           <tr>
+             <td>8</td>
+             <td>315</td>
+             <td>8</td>
+           </tr>
+           <tr>
+             <td>9</td>
+             <td>405</td>
+             <td>8</td>
+           </tr>
+           <tr>
+             <td>10</td>
+             <td>406</td>
+             <td>10</td>
+           </tr>
+           <tbody id="tableCrimeContent">
+           </tbody>
+         </table>
+         <h3 class="center flow-text">Affordability Table</h3>
+         <table class="responsive-table centered" id="housingTable">
+           <thead>
+             <th>Position</th>
+             <th>District</th>
+             <th># Ext Low Income Units</th>
+           </thead>
+           <tbody id="tableHousingContent">
+             <tr>
+               <td>1</td>
+               <td>204</td>
+               <td>1353</td>
+             </tr>
+             <tr>
+               <td>2</td>
+               <td>206</td>
+               <td>1116</td>
+             </tr>
+             <tr>
+               <td>3</td>
+               <td>104</td>
+               <td>712</td>
+             </tr>
+             <tr>
+               <td>4</td>
+               <td>203</td>
+               <td>630</td>
+             </tr>
+             <tr>
+               <td>5</td>
+               <td>316</td>
+               <td>607</td>
+             </tr>
+             <tr>
+               <td>6</td>
+               <td>110</td>
+               <td>559</td>
+             </tr>
+             <tr>
+               <td>7</td>
+               <td>315</td>
+               <td>540</td>
+             </tr>
+             <tr>
+               <td>8</td>
+               <td>307</td>
+               <td>354</td>
+             </tr>
+             <tr>
+               <td>9</td>
+               <td>309</td>
+               <td>187</td>
+             </tr>
+             <tr>
+               <td>10</td>
+               <td>301</td>
+               <td>105</td>
+             </tr>
+           </tbody>
+         </table>
+         <h3 class="center flow-text">Best 3 Districts Table</h3>
+         <table class="responsive-table centered" id="bestTable">
+           <thead>
+             <th>Position</th>
+             <th>District</th>
+           </thead>
+           <tbody id="tableBestContent">
+             <tr>
+               <td>1</td>
+               <td>315</td>
+             </tr>
+             <tr>
+               <td>2</td>
+               <td>408</td>
+             </tr>
+             <tr>
+               <td>3</td>
+               <td>406</td>
+             </tr>
+           </tbody>
+         </table>
+       </div>
+       </div>
+   </div>
+   <!-- End of best districts tables -->
+   <!-- Start of search bar -->
+   <div class="blue-grey-text center" id="tableDataSearch"> <h4 class="flow-text">Search By Neighborhood</h4> </div>
+   <div class="progress">
+       <div class="determinate" style="width:100%"></div>
+   </div>
+   <!--Start of filter table, made with the help of https://www.w3schools.com/howto/howto_js_filter_table.asp -->
+   <div class="container">
+     <input type="text" id="neighborhoodInput" onkeyup="neighborhoodInputFunction()" placeholder="Search by Neighborhood">
+   </div>
+   <!-- End of filter table -->
+   <!-- End of search bar -->
+   <!-- Start of Tables and Search -->
+   <div class="container-fluid">
+     <div class="row">
+       <div class="col">
+         <div id="tableLimit">
+           <div id="tableScroll">
+             <table style="width:100%" id="neighborhoodTable" class="responsive-table centered">
+               <thead>
+                 <th>Borough</th>
+                 <th>Neighborhood</th>
+               </thead>
+               <tbody id="tableContent">
+               </tbody>
+             </table>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- start map arrow-->
+     <div class="row">
+       <div class="col center">
+         <div class="card blue-grey">
+           <div class="d3maparrow z-depth-4"></div>
+         </div>
+       </div>
+     </div>
+     <!-- end map arrow-->
+     <div class="row">
+       <div class="col s4 center">
+         <button class="btn light-blue darken-4 z-depth-1" id="displayNeighborhoodDistanceData">Show Distance by Neighborhood Data</button>
+       </div>
+         <div class="col s4 center">
+           <button class="btn light-blue darken-4 z-depth-1" id="displayNeighborhoodCrimeData">Show Crimes by Neighborhood Data</button>
+         </div>
+         <div class="col s4 center">
+           <button class="btn light-blue darken-4 z-depth-1" id="displayNeighborhoodHousingData">Show Affordability by Neighborhood Data</button>
+         </div>
+     </div>
+   </div>
+   <!-- End of Tables and Search -->
+
+      <!-- Jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+      <!-- d3.j -->
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+      <!-- Custom js -->
+    <script type="text/javascript" src="js/main.js"></script>
+     <!--Import jQuery before materialize.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <!-- Google Maps -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtwtotPF4yTeXqms_1GQp8FJUyaPzWNsw&libraries=geometry&libraries=places&callback=onGoogleMapResponse">
+    </script>
+  </body>
 </html>
