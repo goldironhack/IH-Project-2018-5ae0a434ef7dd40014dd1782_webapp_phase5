@@ -1,9 +1,9 @@
-const urlGIS = "https://data.cityofnewyork.us/api/views/xyye-rtrs/rows.json";
-const urlGeo = "http://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/nycd/FeatureServer/0/query?where=1=1&outFields=*&outSR=4326&f=geojson"
-const urlCrimesOpt = "https://data.cityofnewyork.us/resource/9s4h-37hy.json"
-const urlHouse = "https://data.cityofnewyork.us/api/views/hg8x-zxpr/rows.json"
-const urlGeoCr = "https://data.cityofnewyork.us/resource/9s4h-37hy.geojson?$where=cmplnt_fr_dt=%222015-12-31T00:00:00%22"
-const urlCrimes = "https://data.cityofnewyork.us/resource/qgea-i56i.json?$where=cmplnt_fr_dt=%222015-12-31T00:00:00%22"
+const urlGIS = "https://data.cityofnewyork.us/api/views/xyye-rtrs/rows.json?$limit=3000";
+const urlGeo = "http://services5.arcgis.com/GfwWNkhOj9bNBqoJ/arcgis/rest/services/nycd/FeatureServer/0/query?where=1=1&outFields=*&outSR=4326&f=geojson&$limit=3000"
+const urlCrimesOpt = "https://data.cityofnewyork.us/resource/9s4h-37hy.json?$limit=3000"
+const urlHouse = "https://data.cityofnewyork.us/api/views/hg8x-zxpr/rows.json?$limit=3000"
+const urlGeoCr = "https://data.cityofnewyork.us/resource/9s4h-37hy.geojson?$where=cmplnt_fr_dt=%222015-12-31T00:00:00%22&$limit=3000"
+const urlCrimes = "https://data.cityofnewyork.us/resource/qgea-i56i.json?$where=cmplnt_fr_dt=%222015-12-31T00:00:00%22&$limit=3000"
 
 var map;
 var jsonGIS;
